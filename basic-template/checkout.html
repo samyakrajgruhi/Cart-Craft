@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+      <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+      <title>Checkout</title>
+
+  </head>
+  <body class="pt-16 bg-gray-100">
+      <header class="w-full h-16 md:h-12 gap-2 bg-white flex justify-between px-4 items-center fixed top-0 shadow-lg ">
+         <img class="w-9" src="./images/icons/logo-blue.svg">
+         <div class="text-xl font-semibold text-center">
+            Checkout (<span class="text-blue-700">3 Items</span>)
+         </div>
+         <img class="w-6" src="./images/icons/checkout-icon.png">
+      </header>
+      <main class="p-6  md:w-2/3 md:m-auto flex flex-col gap-4">
+         <!-- Main Heading -->
+         <h1 class="text-2xl font-semibold">Review your order</h1>
+         <!-- Section which containes the main body. That is, the payment summary and orders-->
+         <section class="flex flex-col md:flex-row  gap-4">
+
+            <!-- This is Payment Summary Block-->
+            <section class="border w-full md:h-1/2 rounded-lg p-4 flex flex-col gap-2 bg-white shadow-md md:order-2">
+               <!-- Heading -->
+               <h2 class="text-lg font-medium">Payment Summary</h2>
+
+               <!-- Item + Delivery Charges-->
+               <div>
+                  <div class="flex justify-between">
+                     <span class="text-start">Items (3) :</span>
+                     <span class="text-end">$42.75</span>
+                  </div>
+                  <div class="flex justify-between">
+                     <span class="text-start">Shipping & handling :</span>
+                     <span class="text-end">$4.99</span>
+                     
+                  </div>
+               </div>
+               <hr class="w-14 self-end">
+               <!-- Before Tax Cost and tax applied -->
+               <div>
+                  <div class="flex justify-between">
+                     <span class="text-start">Total before tax :</span>
+                     <span class="text-end">$47.74</span>
+                  </div>
+                  <div class="flex justify-between">
+                     <span class="text-start">Estimated tax (10%) :</span>
+                     <span class="text-end">$4.77</span>
+                  </div>
+               </div>
+               <hr>
+               <!-- After Tax total Cost -->
+               <div class="flex justify-between text-blue-700 text-lg font-semibold">
+                  <span>Order Total :</span>
+                  <span>$52.51</span>
+               </div>
+               <!-- Add to Cart button -->
+               <button class="bg-blue-700 active:bg-blue-900 font-semibold text-md text-white p-2 rounded-lg mt-4 ">
+                  Add to cart
+               </button>
+            </section>
+
+            <!-- This section contains all the orders-->
+            <section class="flex flex-col gap-4">
+
+               <!-- Order Block -->
+               <section class="flex flex-col border rounded-lg p-4 w-full bg-white shadow-md gap-2">
+                  <span class="text-blue-700 text-xl font-semibold">Delivery date: Tuesday, June 21</span>
+                  <section class=" flex flex-col md:flex-row gap-4  order-1">
+                     
+                     
+                     <!-- Order Details -->
+                     <section class="flex md:w-3/5 md:gap-4 items-center">
+                        <img class="w-1/2 md:w-1/3" src="./images/products/athletic-cotton-socks-6-pairs.png">
+                        <div class="flex flex-col md:flex-grow gap-4">
+                           <span class="text-md md:text-lg font-semibold">Black and Gray Athletic Cotton Socks - 6 Pairs</span>
+                           <span class="text-lg font-bold">$10.90</span>
+                           <span class="text-sm">Quantity: 2 
+                              <span class="text-blue-700">
+                                 <a>Update</a> <a>Delete</a>
+                              </span>
+                           </span>
+                        </div>
+                     </section>
+
+                     <!-- Delivery Option -->
+                     <section class="flex flex-col md:gap-2 md:mt-0 gap-4 mt-4">
+                        <span>Choose a delivery option :</span>
+                        
+                        <div class="flex gap-8 pl-2">
+                           <input class="w-4" type="radio">
+                           <div class="flex flex-col">
+                              <span>
+                                 Tuesday, June 21
+                              </span>
+                              <span class="text-gray-500">
+                                 FREE Shipping
+                              </span>
+                           </div>
+                        </div>
+
+                        <div class="flex gap-8 pl-2">
+                           <input class="w-4" type="radio">
+                           <div class="flex flex-col">
+                              <span>
+                                 Tuesday, June 22
+                              </span>
+                              <span class="text-gray-500">
+                                 $4.99 - Shipping
+                              </span>
+                           </div>
+                        </div>
+
+                        <div class="flex gap-8 pl-2">
+                           <input class="w-4" type="radio">
+                           <div class="flex flex-col">
+                              <span>
+                                 Tuesday, June 23
+                              </span>
+                              <span class="text-gray-500">
+                                 $9.99 - Shipping
+                              </span>
+                           </div>
+                        </div>
+                     </section>
+                  </section>
+               </section>
+
+               <!-- Order Block -->
+               <section class="flex flex-col border rounded-lg p-4 w-full bg-white shadow-md gap-2">
+                  <span class="text-blue-700 text-xl font-semibold">Delivery date: Tuesday, June 21</span>
+                  <section class=" flex flex-col md:flex-row gap-4  order-1">
+                     
+                     
+                     <!-- Order Details -->
+                     <section class="flex md:w-3/5 md:gap-4 items-center">
+                        <img class="w-1/2 md:w-1/3" src="./images/products/intermediate-composite-basketball.png">
+                        <div class="flex flex-col md:flex-grow gap-4">
+                           <span class="text-md md:text-lg font-semibold">Intermediate Size  BasketBall</span>
+                           <span class="text-lg font-bold">$20.90</span>
+                           <span class="text-sm">Quantity: 1 
+                              <span class="text-blue-700">
+                                 <a>Update</a> <a>Delete</a>
+                              </span>
+                           </span>
+                        </div>
+                     </section>
+
+                     <!-- Delivery Option -->
+                     <section class="flex flex-col md:gap-2 md:mt-0 gap-4 mt-4">
+                        <span>Choose a delivery option :</span>
+                        
+                        <div class="flex gap-8 pl-2">
+                           <input class="w-4" type="radio">
+                           <div class="flex flex-col">
+                              <span>
+                                 Tuesday, June 21
+                              </span>
+                              <span class="text-gray-500">
+                                 FREE Shipping
+                              </span>
+                           </div>
+                        </div>
+
+                        <div class="flex gap-8 pl-2">
+                           <input class="w-4" type="radio">
+                           <div class="flex flex-col">
+                              <span>
+                                 Tuesday, June 22
+                              </span>
+                              <span class="text-gray-500">
+                                 $4.99 - Shipping
+                              </span>
+                           </div>
+                        </div>
+
+                        <div class="flex gap-8 pl-2">
+                           <input class="w-4" type="radio">
+                           <div class="flex flex-col">
+                              <span>
+                                 Tuesday, June 23
+                              </span>
+                              <span class="text-gray-500">
+                                 $9.99 - Shipping
+                              </span>
+                           </div>
+                        </div>
+                     </section>
+                  </section>
+               </section>
+
+              
+            </section>
+         </section>
+      </main>
+  </body>
+</html>
