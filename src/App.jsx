@@ -1,13 +1,15 @@
-import './App.css'
+import {Routes,Route} from 'react-router';
 
-function App() {
+import './App.css';
+import HomePage from './pages/HomePage';
+import OrdersPage from './pages/OrdersPage';
+
+
+export default function App() {
   return (
-    <>
-      <div className='flex h-screen w-screen justify-center items-center text-blue-400 bg-green-100'>
-        <h1>Welcome to React</h1>
-      </div>
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/orders" element={<OrdersPage />} />
+    </Routes>
   );
 }
-
-export default App
