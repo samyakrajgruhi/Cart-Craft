@@ -33,7 +33,7 @@ export default function OrdersPage() {
 
                   {/* Item */}
                   <section className="flex flex-col md:flex-row md:items-start gap-4 p-4 ">
-                     <img className="w-64 md:w-56 mx-auto" src="./images/products/athletic-cotton-socks-6-pairs.png" />
+                     <img className="w-64 md:w-56 mx-auto" src="./images/products/athletic-cotton-socks-6-pairs.jpg" />
                         <section className="flex flex-col gap-4 md:w-3/5">
                            <section className="px-2 text-lg md:text-md">
                               <p className="font-semibold text-xl ">Black and Gray Athletic Cotton Socks - 6 pairs</p>
@@ -47,7 +47,7 @@ export default function OrdersPage() {
 
                   {/* Item */}
                   <section className="flex flex-col md:flex-row md:items-start gap-4 p-4 ">
-                     <img className="w-64 md:w-56 mx-auto" src="./images/products/intermediate-composite-basketball.png" />
+                     <img className="w-64 md:w-56 mx-auto" src="./images/products/intermediate-composite-basketball.jpg" />
                         <section className="flex flex-col gap-4 md:w-3/5">
                            <section className="px-2 text-lg md:text-md">
                               <p className="font-semibold text-xl ">Intermediate Sized Basketball</p>
