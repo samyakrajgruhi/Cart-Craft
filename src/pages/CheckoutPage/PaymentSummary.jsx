@@ -39,7 +39,7 @@ export default function PaymentSummary({paymentSummary}) {
                   <span>{formatMoney(paymentSummary.totalCents)}</span>
                </div>
                {/* Add to Cart button */}
-               <button className="bg-blue-700 active:bg-blue-900 font-semibold text-md text-white p-2 rounded-lg mt-4 ">
+               <button className="bg-blue-600 font-semibold text-md text-white p-2 rounded-lg mt-4 cursor-pointer hover:opacity-80 active:bg-blue-700">
                   Place your order
                </button>
             </section>

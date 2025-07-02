@@ -6,7 +6,7 @@ export default function Header(){
    return (
 
       <>
-         <header className="w-full h-16 md:h-12 bg-blue-500 gap-2 flex justify-between px-4 items-center fixed top-0">
+         <header className="w-full h-16 md:h-14 bg-blue-600 gap-2 flex justify-between px-4 items-center fixed top-0">
             {/* this is logo || Left section*/}
             <NavLink to="/" className="flex items-center gap-1">
                <svg width="40" height="40" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -33,7 +33,7 @@ export default function TrackingPage(){
                </div>   
 
                {/* Item image */}
-               <img className="w-92 self-center" src="./images/products/athletic-cotton-socks-6-pairs.png" />
+               <img className="w-60 self-center" src="./images/products/athletic-cotton-socks-6-pairs.jpg" />
 
                {/* Tracking details */}
                <div className="flex flex-col gap-2">

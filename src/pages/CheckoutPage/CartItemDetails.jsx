@@ -9,7 +9,7 @@ export default function CartItemDetails({cartItem}) {
                <span className="text-md md:text-lg font-semibold">{cartItem.Product.name}</span>
                <span className="text-lg font-bold">{formatMoney(cartItem.Product.priceCents)}</span>
                <span className="text-sm">Quantity: {cartItem.quantity}
-                  <span className="text-blue-700 cursor-pointer">
+                  <span className="text-blue-600 cursor-pointer font-semibold">
                      <a> Update</a> <a>Delete</a>
                   </span>
                </span>

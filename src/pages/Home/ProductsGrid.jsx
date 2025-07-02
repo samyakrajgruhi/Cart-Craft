@@ -34,7 +34,7 @@ export default function ProductsGrid({products}) {
                   <div className="font-bold text-xl">
                      {formatMoney(product.priceCents)}
                   </div>
-                  <button className="bg-blue-500 w-1/2 rounded-lg p-2 text-white text-md">Add To Cart</button>
+                  <button className="bg-blue-500 w-1/2 rounded-lg p-2 text-white text-md cursor-pointer hover:opacity-80 active:bg-blue-700">Add To Cart</button>
                </div>
             </section>
          ))}
