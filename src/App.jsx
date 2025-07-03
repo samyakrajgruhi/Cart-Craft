@@ -24,7 +24,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage loadCart={loadCart} />} />
-      <Route path="/orders" element={<OrdersPage />} />
+      <Route path="/orders" element={<OrdersPage loadCart={loadCart} />} />
       <Route path="/tracking" element={<TrackingPage />} />
       <Route path="/checkout" element={<CheckoutPage cart={cart} loadCart={loadCart} />} />
     </Routes>

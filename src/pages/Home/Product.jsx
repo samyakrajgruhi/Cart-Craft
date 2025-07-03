@@ -41,7 +41,7 @@ export default function Product({ product,loadCart }) {
                {formatMoney(product.priceCents)}
             </div>
             <button className="bg-blue-500 w-1/2 rounded-lg p-2 text-white text-md cursor-pointer hover:opacity-80 active:bg-blue-700"
-               onClick={async () => {
+               onClick={ async () => {
                   await axios.post('/api/cart-items', {
                      productId: product.id,
                      quantity: quantity

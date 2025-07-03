@@ -6,7 +6,7 @@ import OrderHeader from "./OrderHeader.jsx";
 import OrderItem from "./OrderItem.jsx";
 
 
-export default function OrdersPage() {
+export default function OrdersPage({loadCart}) {
    const [ordersData, setOrdersData] = useState([]);
    useEffect(() => {
       const getOrdersData = async () => {
@@ -32,7 +32,7 @@ export default function OrdersPage() {
                      <OrderHeader order={order} />
                   
                      {/* Item */}
-                     <OrderItem order={order} />
+                     <OrderItem order={order} loadCart={loadCart} />
                   </section>  
                ))}
 
