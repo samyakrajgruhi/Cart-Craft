@@ -27,7 +27,7 @@ export default function CheckoutPage({cart,loadCart}) {
       <>
          <div className="pt-16 bg-gray-100">
 
-            <CheckoutHeader />
+            <CheckoutHeader cart={cart} />
             {/* Main Body */}
 
             <main className="p-6  md:w-4/5 md:m-auto flex flex-col gap-4">
@@ -46,6 +46,7 @@ export default function CheckoutPage({cart,loadCart}) {
                   {/* This is Payment summary block */}
                   <PaymentSummary 
                      paymentSummary={paymentSummary}
+                     loadCart={loadCart}
                   />
    
                </section>

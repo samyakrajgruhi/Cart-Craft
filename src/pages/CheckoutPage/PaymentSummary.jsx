@@ -1,6 +1,15 @@
 import { formatMoney } from "../../utils/money";
+import { useNavigate } from "react-router";
+import axios from "axios";
 
-export default function PaymentSummary({paymentSummary}) {
+export default function PaymentSummary({paymentSummary,loadCart}) {
+   const navigate = useNavigate();
+   const placeOrder = async () => {
+      await axios.post("/api/orders");
+      await loadCart();
+      navigate('/orders');
+   };
+
    return (
       <>
          {paymentSummary && (
@@ -39,7 +48,9 @@ export default function PaymentSummary({paymentSummary}) {
                   <span>{formatMoney(paymentSummary.totalCents)}</span>
                </div>
                {/* Add to Cart button */}
-               <button className="bg-blue-600 font-semibold text-md text-white p-2 rounded-lg mt-4 cursor-pointer hover:opacity-80 active:bg-blue-700">
+               <button className="bg-blue-600 font-semibold text-md text-white p-2 rounded-lg mt-4 cursor-pointer hover:opacity-80 active:bg-blue-700"
+                  onClick={placeOrder}
+               >
                   Place your order
                </button>
             </section>
