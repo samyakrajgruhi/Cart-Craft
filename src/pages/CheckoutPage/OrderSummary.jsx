@@ -2,7 +2,7 @@ import DeliveryOptions from "./DeliveryOptions";
 import CartItemDetails from "./CartItemDetails";
 import DeliveryDate from "./DeliveryDate";
 
-export default function OrderSummary({deliveryOptions,cart}) {
+export default function OrderSummary({deliveryOptions,cart,loadCart}) {
    return (
       <>
          <section className="flex flex-col gap-4 md:min-w-2/3">
@@ -27,6 +27,7 @@ export default function OrderSummary({deliveryOptions,cart}) {
                            <DeliveryOptions 
                               deliveryOptions={deliveryOptions}
                               cartItem={cartItem}
+                              loadCart={loadCart}
                            />
                         </section>
                      </section>

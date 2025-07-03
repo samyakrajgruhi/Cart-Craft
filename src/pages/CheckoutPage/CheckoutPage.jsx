@@ -5,7 +5,7 @@ import "./TailwindImport.css";
 import PaymentSummary from "./PaymentSummary";
 import OrderSummary from "./OrderSummary";
 
-export default function CheckoutPage({cart}) {
+export default function CheckoutPage({cart,loadCart}) {
    
    const [paymentSummary, setPaymentSummary] = useState(null);
    const [deliveryOptions, setDeliveryOptions] = useState([]);
@@ -20,7 +20,7 @@ export default function CheckoutPage({cart}) {
       }
 
       getCheckoutData();
-   }, [])
+   }, [cart])
 
    return (
 
@@ -30,7 +30,7 @@ export default function CheckoutPage({cart}) {
             <CheckoutHeader />
             {/* Main Body */}
 
-            <main className="p-6  md:w-2/3 md:m-auto flex flex-col gap-4">
+            <main className="p-6  md:w-4/5 md:m-auto flex flex-col gap-4">
                {/* Main Heading */}
                <h1 className="text-2xl font-semibold">Review your order</h1>
                {/* Section which containes the main body. That is, the payment summary and orders */}
@@ -40,6 +40,7 @@ export default function CheckoutPage({cart}) {
                   <OrderSummary 
                      deliveryOptions={deliveryOptions}
                      cart={cart}
+                     loadCart={loadCart}
                   />
 
                   {/* This is Payment summary block */}

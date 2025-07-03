@@ -20,7 +20,7 @@ export default function PaymentSummary({paymentSummary}) {
 
                   </div>
                </div>
-               <hr className="w-14 self-end" />
+               <hr className="w-14 self-end text-gray-300" />
                {/*Before tax cost and tax applied*/}
                <div>
                   <div className="flex justify-between">
@@ -32,7 +32,7 @@ export default function PaymentSummary({paymentSummary}) {
                      <span className="text-end">{formatMoney(paymentSummary.taxCents)}</span>
                   </div>
                </div>
-               <hr />
+               <hr className="text-gray-300"/>
                {/*After tax total cost */}
                <div className="flex justify-between text-blue-700 text-lg font-semibold">
                   <span>Order Total :</span>
