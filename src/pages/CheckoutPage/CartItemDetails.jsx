@@ -1,6 +1,12 @@
 import { formatMoney } from "../../utils/money"
+import axios from "axios";
 
-export default function CartItemDetails({cartItem}) {
+export default function CartItemDetails({cartItem,loadCart}) {
+   const deleteItem = async() => {
+      console.log(cartItem.productId)
+      await axios.delete(`/api/cart-items/${cartItem.productId}`)
+      await loadCart();
+   }
    return (
       <>
          <section className="flex md:w-3/5 md:gap-4 items-center">
@@ -10,7 +16,7 @@ export default function CartItemDetails({cartItem}) {
                <span className="text-lg font-bold">{formatMoney(cartItem.Product.priceCents)}</span>
                <span className="text-sm">Quantity: {cartItem.quantity}
                   <span className="text-blue-600 cursor-pointer font-semibold">
-                     <a> Update</a> <a>Delete</a>
+                     <a className="hover:opacity-80"> Update</a> <a onClick={deleteItem} className="hover:opacity-80">Delete</a>
                   </span>
                </span>
             </div>

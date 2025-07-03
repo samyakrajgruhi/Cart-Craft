@@ -19,7 +19,7 @@ export default function OrderSummary({deliveryOptions,cart,loadCart}) {
                      <section className=" flex flex-col md:flex-row gap-4  order-1">
 
                         {/* Order details */}
-                        <CartItemDetails cartItem={cartItem} />
+                        <CartItemDetails cartItem={cartItem} loadCart={loadCart} />
 
                         {/* Delivery options */}
                         <section className="flex flex-col md:gap-2 md:mt-0 gap-4 mt-4">
