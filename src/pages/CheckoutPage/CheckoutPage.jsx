@@ -5,16 +5,14 @@ import "./TailwindImport.css";
 import PaymentSummary from "./PaymentSummary";
 import OrderSummary from "./OrderSummary";
 
-export default function CheckoutPage() {
-   const [cart, setCart] = useState([]);
+export default function CheckoutPage({cart}) {
+   
    const [paymentSummary, setPaymentSummary] = useState(null);
    const [deliveryOptions, setDeliveryOptions] = useState([]);
    useEffect(() => {
       const getCheckoutData = async () => {
-         let response = await axios.get('/api/cart-items?expand=product');
-         setCart(response.data);
-
-         response = await axios.get('/api/payment-summary');
+      
+         let response = await axios.get('/api/payment-summary');
          setPaymentSummary(response.data);
 
          response = await axios.get('/api/delivery-options?expand=estimatedDeliveryTime');

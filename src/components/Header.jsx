@@ -32,11 +32,13 @@ export default function Header(){
             </section>
             {/* Order & Cart button || Right section*/}
             <section className="flex gap-2">
-               <NavLink to="/orders" className="text-white text-center text-sm border p-1 rounded-md">
+               <NavLink to="/orders" className="text-white text-center text-md border p-1 md:p-2 rounded-md">
                   Orders
                </NavLink>
-               <NavLink to="/checkout" className="text-white text-center text-sm border p-1 rounded-md flex items-center gap-1">
-                  <img className="w-4" src="/images/icons/shopping_cart.svg" alt="Cart" />
+               <NavLink to="/checkout" className="text-white text-center text-md border p-1 md:p-2 rounded-md flex items-center gap-1">
+                  <div className="w-6 relative"> 
+                     <img className="w-full" src="/images/icons/shopping-cart.svg" alt="Cart" />
+                  </div>
                   Cart
                </NavLink>
             </section>
