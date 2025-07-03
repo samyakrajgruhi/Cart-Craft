@@ -1,10 +1,12 @@
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 import { formatMoney } from '../../utils/money';
 import axios from 'axios';
 
 export default function Product({ product,loadCart }) {
 
    const [quantity,setQuantity] = useState(1);
+   const [showAdded, setShowAdded] = useState(false);
+   const timeoutRef = useRef(null);
 
    return (
       <section className="flex-1 shadow-xl bg-white flex flex-col items-center justify-between p-4 gap-4" >
@@ -35,6 +37,10 @@ export default function Product({ product,loadCart }) {
                <option value="10">10</option>
             </select>
          </div>
+         <div className={`font-semibold text-green-600 self-end flex gap-1 transition-opacity ${showAdded ? 'opacity-100' : 'opacity-0'}`}>
+            Added <img className= "w-3" src="/images/icons/checkmark.png" /> 
+             
+         </div>
          {/* Add To Cart Button with Price */}
          <div className="flex w-full justify-between items-center">
             <div className="font-bold text-xl">
@@ -42,11 +48,24 @@ export default function Product({ product,loadCart }) {
             </div>
             <button className="bg-blue-500 w-1/2 rounded-lg p-2 text-white text-md cursor-pointer hover:opacity-80 active:bg-blue-700"
                onClick={ async () => {
+                  if (timeoutRef.current) {
+                     clearTimeout(timeoutRef.current);
+                  }
+                  
+                  setShowAdded(true);
+
+                  timeoutRef.current = setTimeout(() => {
+                     setShowAdded(false);
+                     timeoutRef.current = null;
+                  }, 2000);
+                  
                   await axios.post('/api/cart-items', {
                      productId: product.id,
                      quantity: quantity
                   });
                   await loadCart();
+                  
+                  
                }}
             >Add To Cart</button>
          </div>
