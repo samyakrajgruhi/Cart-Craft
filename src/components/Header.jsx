@@ -1,8 +1,17 @@
 import "./Header.css";
-import { NavLink } from "react-router";
+import { NavLink,useNavigate} from "react-router";
+import { useState } from "react";
 
 
 export default function Header(){
+   const navigate = useNavigate();
+   const [inputText, setInputText] = useState("");
+
+   const searchText = () => {
+      console.log(inputText)
+   }
+
+
    return (
 
       <>
@@ -24,8 +33,17 @@ export default function Header(){
             {/* This is the search bar || Middle section */}
             <section className="flex flex-grow justify-center">
                <div className="flex w-2/3">
-                  <input className="w-full rounded-tl-md rounded-bl-md text-xs p-2 bg-white" placeholder="Search" />
-                  <button className="flex flex-col justify-center items-center bg-blue-300 rounded-tr-md rounded-br-md px-2 ">
+                  <input className="w-full rounded-tl-md rounded-bl-md text-xs p-2 bg-white" placeholder="Search" value={inputText} 
+                     onChange={(event)=>{
+                        setInputText(event.target.value)
+                     }}
+                  />
+                  <button className="flex flex-col justify-center items-center bg-blue-300 rounded-tr-md rounded-br-md px-2 "
+                     onClick={()=>{
+                        navigate(`/?search=${inputText}`)
+                        searchText();
+                     }}
+                  >
                      <img className="w-4" src="/images/icons/go-button.svg" alt="Search" />
                   </button>
                </div>

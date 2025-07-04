@@ -1,21 +1,40 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './TailwindImport.css';
 import Header from "../../components/Header.jsx";
 import axios from "axios";
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router';
 import ProductsGrid from './ProductsGrid.jsx';
 
 
-export default function HomePage({loadCart }) {
+
+export default function HomePage({ loadCart }) {
+
+   const [searchParams] = useSearchParams();
+   const search = searchParams.get('search');
 
    const [products, setProducts] = useState([]);
 
-   useEffect(() => {
-      axios.get('/api/products').then(
-         (response) => {
-            setProducts(response.data);
-         }
-      )
-   },[])
+   const getProducts = async () => {
+      if (search) {
+         await axios.get(`/api/products?search=${search}`).then(
+            (response) => {
+               setProducts(response.data);
+            }
+         )
+
+      } else {
+         await axios.get('/api/products').then(
+            (response) => {
+               setProducts(response.data);
+            }
+         )
+      }
+   }
+
+   useEffect(()=> {
+      getProducts()
+   }, [search])
 
    return (
       <>
