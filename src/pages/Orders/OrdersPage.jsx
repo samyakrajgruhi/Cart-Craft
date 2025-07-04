@@ -6,7 +6,7 @@ import OrderHeader from "./OrderHeader.jsx";
 import OrderItem from "./OrderItem.jsx";
 
 
-export default function OrdersPage({loadCart}) {
+export default function OrdersPage({cart,loadCart}) {
    const [ordersData, setOrdersData] = useState([]);
    useEffect(() => {
       const getOrdersData = async () => {
@@ -15,7 +15,7 @@ export default function OrdersPage({loadCart}) {
       }
       getOrdersData();
 
-   }, []);
+   }, [cart]);
 
    return (
       <>
