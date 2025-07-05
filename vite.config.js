@@ -8,10 +8,10 @@ export default defineConfig({
   server:{
     proxy:{
       '/api':{
-        target: 'http://3.111.55.239:3000',
+        target: 'http://13.201.188.104:3000/',
       },
       '/images':{
-        target: 'http://3.111.55.239:3000'
+        target: 'http://13.201.188.104:3000/'
       }
     }
   }
